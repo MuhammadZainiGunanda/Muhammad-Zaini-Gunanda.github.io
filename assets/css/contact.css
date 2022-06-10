@@ -1,0 +1,290 @@
+/* =============== GOOGLE FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Tiro+Telugu&display=swap');
+
+/* =============== VARIABLE CSS ================= */
+	:root {
+		/* ============ COLOR =============== */
+		/* Color mode HSL(hue, Saturation, Lightness */
+		/* 
+		Blue: hsl(207, 90%, 61%)
+		Purple: hsl(250, 66%, 75%) 
+		Pink: hsl(356, 66%, 75%)
+		Teal: hsl(174, 63%, 62%)  
+		*/
+
+		--hue: 250;
+		--sat: 66%;
+		--lig: 75%;
+
+		--first-color: hsl(var(--hue), var(--sat), var(--lig));
+		--first-color-alt: hsl(var(--hue), var(--sat), 71%); /*-4% */
+		--title-color: hsl(var(--hue), 12%, 15%);
+		--text-color: hsl(var(--hue), 12%, 45%);;
+		--text-color-light: hsl(var(--hue), 8%, 75%);;
+		--text-color-lighten: hsl(var(--hue), 8%, 92%);;
+		--body-color: hsl(var(--hue), 100%, 99%);;
+		--container-color: #fff;
+
+		/* ==== Font and typography ==== /*. 
+		/* 5rem = 8px / 1rem = 16px */
+		--body-font:'Poppins', sans-serif;
+		--h2-font-size: 1.25rem;
+		--h3-font-size: 1rem;
+		--normal-font-size: .938rem;
+		--small-font-size: .813rem;
+		-smaller-font-size: .75rem;	
+}
+
+/* RESPONSIVE typography */
+@media screen and (min-width: 968px) {
+	:root {
+		--h2-font-size: 1.5rem;
+		--h3-font-size: 1.25rem;
+		--normal-font-size: 1rem;
+		--small-font-size: .875rem;
+		--samller-font-size: .813rem;
+	}
+}
+
+/* ================== BASE =================== */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	font-family: var(--body-font);
+	font-size: var(--normal-font-size);
+	color: var(--text-color);
+	transition: .3s; /* for animation dark mode */
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 0 10px;
+	background-color: var(--body-color);
+}
+
+/* ================== THEME =================== */
+.change-theme {
+	position: absolute;
+	top: 1.5rem;
+	right: 0;
+	font-size: 1.25rem;
+	color: var(--title-color);
+	cursor: pointer;
+	transition: .3s;
+}
+
+.change-theme:hover {
+	color: var(--first-color);
+}
+
+/* ========== VARIABLE DARK THEME =========== */
+body.dark-theme {
+	--title-color: hsl(var(--hue), 12%, 95%);
+	--text-color: hsl(var(--hue), 12%, 75%);
+	--body-color: hsl(var(--hue), 40%, 8%);
+	--container-color: hsl(var(--hue), 24%, 12%);
+}
+/* ========== 
+	COLOR changes in some parts 
+	of the website, in light theme 
+=========== */
+
+.dark-theme .button__gray {
+	background-color: var(--container-color);
+}
+.dark-theme .button__gray:hover {
+	background-color: hsl(var(--hue), 24%, 16%);
+}
+
+.dark-theme .filters__content {
+	background-color: var(--container-color);
+}
+
+.dark-theme::-webkit-scrollbar {
+	background-color: hsl(var(--hue), 8%, 16%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb {
+	background-color: hsl(var(--hue), 8%, 24%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover{
+	background-color: hsl(var(--hue), 8%, 32%);
+}
+
+/* ================ SCROLL BAR =================== */
+::-webkit-scrollbar {
+	width: .6rem;
+	border-radius: .5rem;
+	background-color: hsl(var(--hue), 8%, 66%);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: .5rem;
+	background-color: hsl(var(--hue), 8%, 54%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: hsl(var(--hue), 8%, 44%);
+}
+
+/* ================ FOOTER =================== */
+.footer__copy {
+	display: block;
+	margin: 2.5rem 0 2rem;
+	text-align: center;
+	font-size: var(--smaller-font-size);
+	color: var(--text-color-light);
+}
+
+/* ================ From wrapper =================== */
+.wrapper {
+	width: 720px;
+	border-radius: 15px;
+	background: var(--container-color);
+}
+
+.wrapper header {
+	font-size: 22px;
+	font-weight: 600;
+	padding: 20px 30px;
+	border-bottom: 2px solid var(--first-color);
+}
+
+header {
+	color: var(--first-color);
+	font-weight: 600;
+}
+
+.wrapper form {
+	margin: 35px 30px;
+}
+
+form .dbl-field {
+	display: flex;
+	align-items: center;
+	margin-bottom: 25px;
+	justify-content: space-between;
+}
+
+.dbl-field .field {
+	height: 50px;
+	position: relative;
+	width: calc(100% / 2 - 13px);
+}
+
+form .field input {
+	background: transparent;
+}
+
+form .field input,
+form .massage textarea {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	padding: 0 18px 0 48px;
+	font-size: var(--samller-font-size);
+	border-radius: 10px;
+	border: 2.5px solid var(--first-color);
+}
+form .field input::placeholder,
+form .massage textarea::placeholder {
+	color: var(--first-color);
+}
+
+form .field input:focus,
+form .massage textarea:focus {
+	border: 2px solid var(--body-color);
+	color: var(--first-color);
+}
+
+.wrapper form i {
+	position: absolute;
+	left: 18px;
+	top: 36%;
+	color: var(--first-color);
+	font-size: 17px;
+	pointer-events: none;
+	transfrom: translateY(-50%);
+}
+form .field input:focus ~ i{
+	color: 3fff;
+}
+
+form .massage {
+	position: relative;
+}
+
+form .massage i {
+	top: 22px;
+	font-size: 20px;
+}
+
+form .massage textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 120px;
+	max-height: 300px;
+	padding: 15px 20px 0 48px;
+	background: transparent;
+}
+
+form .button-area {
+	margin: 25px 0;
+	display: flex;
+	align-items: center;
+}
+
+.button-area button {
+	border: none;
+	padding: 13px 25px;
+	font-size: var(--samller-font-size);
+	background: var(--first-color);
+	border-radius: 9px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.button-area span {
+	color: var(--first-color);
+	margin-left: 30px;
+	display: none;
+}
+
+/* ================ BREAKPOINTS =================== */
+/* For small device */
+@media screen and (max-width: 320px) {
+	.wrapper header {
+		text-align: center;
+	}
+	form .dbl-field {
+		margin-bottom: 0px;
+		flex-direction: column;
+	}
+	.dbl-field .field {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	form .button-area {
+		flex-direction: column;
+	}
+	.button-area button {
+		width: 100%;
+	}
+	.button-area span {
+		text-align: center;
+		margin: 20px 0;
+	}
+
+	form .massage textarea {
+		resize: none;
+	}
+}
