@@ -59,6 +59,16 @@ body {
 	background-color: var(--body-color);
 	color: var(--text-color);
 	transition: .3s; /* for animation dark mode */
+	animation: animate 5s linear infinite;
+}
+
+@keyFrames animate {
+	0% {
+		transform: translateY(50px);
+	}
+	50% {
+		transform: translateY(100px);
+	}
 }
 
 h1,h2,h3 {
@@ -408,6 +418,19 @@ body.dark-theme {
 	background-color: var(--body-color);
 }
 /* ================ FOOTER =================== */
+.footer {
+	animation: animate 5s linear infinite;
+}
+
+@keyFrames animate {
+	0% {
+		transform: translateY(50px);
+	}
+	50% {
+		transform: translateY(100px);
+	}
+}
+
 .footer__copy {
 	display: block;
 	margin: 2.5rem 0 2rem;
