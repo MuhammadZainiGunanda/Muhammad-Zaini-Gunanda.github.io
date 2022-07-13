@@ -48,6 +48,7 @@
 			localStorage.setItem('selected-icon', getCurrentIcon())
 		})
 
+
 		/* ================== SCROLL REVEL ANIMATION ================= */
 		const sr = ScrollReveal({
 			origin: 'top',
